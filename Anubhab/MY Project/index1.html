@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hospital Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      background-image: url("https://www.ancodeai.com/placeholder.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .list-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .list-item {
+      padding: 10px 20px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="button-container">
+      <button class="button" id="available-doctors">Available Doctors</button>
+      <button class="button" id="available-nurses">Available Nurses</button>
+      <button class="button" id="hospitals">Hospitals</button>
+      <button class="button" id="patients">Patients</button>
+    </div>
+
+    <div class="list-container" id="doctors-list" style="display: none;">
+      <div class="list-item">Dr. John Smith</div>
+      <div class="list-item">Dr. Jane Doe</div>
+      <div class="list-item">Dr. Michael Jones</div>
+      <div class="list-item">Dr. Sarah Miller</div>
+      <div class="list-item">Dr. John </div>
+      <div class="list-item">Dr. Doe</div>
+      <div class="list-item">Dr. Michael</div>
+      <div class="list-item">Dr. Miller</div>
+    </div>
+
+    <div class="list-container" id="nurses-list" style="display: none;">
+      <div class="list-item">Nurse Mary Johnson</div>
+      <div class="list-item">Nurse David Smith</div>
+      <div class="list-item">Nurse Susan Brown</div>
+      <div class="list-item">Nurse Thomas Green</div>
+      <div class="list-item">Nurse Jennifer White</div>
+      <div class="list-item">Nurse Robert Black</div>
+      <div class="list-item">Nurse Linda Brown</div>
+      <div class="list-item">Nurse James White</div>
+      <div class="list-item">Nurse Elizabeth Green</div>
+      <div class="list-item">Nurse Christopher Black</div>
+    </div>
+
+    <div class="list-container" id="hospitals-list" style="display: none;">
+      <div class="list-item">Bangabandhu Sheikh Mujib Medical University Hospital</div>
+      <div class="list-item">Square Hospitals Ltd.</div>
+      <div class="list-item">Apollo Hospitals Dhaka</div>
+      <div class="list-item">HUnited Hospital Limited</div>
+      <div class="list-item">Labaid Specialized Hospital</div>
+    </div>
+
+    <div class="list-container" id="patients-list" style="display: none;">
+      <div class="list-item">Mohammad Rahman</div>
+      <div class="list-item">Fatima Khan</div>
+      <div class="list-item">Akash Ahmed</div>
+      <div class="list-item">Nusrat Jahan</div>
+      <div class="list-item">Kamal Hossain</div>
+      <div class="list-item">Shabnam Begum</div>
+      <div class="list-item">Johnson</div>
+      <div class="list-item">Smith</div>
+      <div class="list-item">Brown</div>
+      <div class="list-item">Green</div>
+      <div class="list-item">White</div>
+      <div class="list-item">Black</div>
+      <div class="list-item">Linda</div>
+      <div class="list-item">James White</div>
+      <div class="list-item">Elizabeth Green</div>
+      <div class="list-item">Christopher</div>
+    </div>
+  </div>
+  <script>
+    const availableDoctorsButton = document.getElementById("available-doctors");
+    const availableNursesButton = document.getElementById("available-nurses");
+    const hospitalsButton = document.getElementById("hospitals");
+    const patientsButton = document.getElementById("patients");
+
+    const doctorsList = document.getElementById("doctors-list");
+    const nursesList = document.getElementById("nurses-list");
+    const hospitalsList = document.getElementById("hospitals-list");
+    const patientsList = document.getElementById("patients-list");
+
+    availableDoctorsButton.addEventListener("click", () => {
+      doctorsList.style.display = "flex";
+      nursesList.style.display = "none";
+      hospitalsList.style.display = "none";
+      patientsList.style.display = "none";
+    });
+
+    availableNursesButton.addEventListener("click", () => {
+      doctorsList.style.display = "none";
+      nursesList.style.display = "flex";
+      hospitalsList.style.display = "none";
+      patientsList.style.display = "none";
+    });
+
+    hospitalsButton.addEventListener("click", () => {
+      doctorsList.style.display = "none";
+      nursesList.style.display = "none";
+      hospitalsList.style.display = "flex";
+      patientsList.style.display = "none";
+    });
+
+    patientsButton.addEventListener("click", () => {
+      doctorsList.style.display = "none";
+      nursesList.style.display = "none";
+      hospitalsList.style.display = "none";
+      patientsList.style.display = "flex";
+    });
+  </script>
+</body>
+
+</html>
